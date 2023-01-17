@@ -1,4 +1,8 @@
 <?php
+//Day 2 
+session_start();
+
+
 $error="";
 $name="";
 $email="";
@@ -25,11 +29,14 @@ if (count($_POST)>0){
     }
     else{
         $error="";
-        // die("Thanks For Contacting Us <br/> Name: ".$name."<br/> Email:".$email."<br/> messege :".$message);
+        
+       $usersData = ["dateOfLog" => date("F j Y g:i a"), "ipAddress" => $_SERVER["SERVER_ADDR"] , "email" => $email  ,"name" => trim($name)];
+       $_SESSION["users"]=  $usersData;   
+       // die("Thanks For Contacting Us <br/> Name: ".$name."<br/> Email:".$email."<br/> messege :".$message);
         header("Location:contactUs.php?name=$name&email=$email&message=$message");
+     
     }
+
 }
-
-
 
 ?>

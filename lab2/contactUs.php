@@ -1,6 +1,11 @@
 <?php
 // include_once("index.php");
 print_r($_GET);
+// echo $_GET["name"];
+// session_start();
+// $usersData = ["name" => trim($_GET["name"]) , "email" => $email , "ipAddress" => $_SERVER["SERVER_ADDR"] , "dateOfLog" => date("F j, Y, g:i a") ];
+// print_r($_SESSION["users"]);
+header("Location:logConfig.php");
 ?>
 <!DOCTYPE html>
 <html lang="en">
